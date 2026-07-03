@@ -17,9 +17,7 @@ font-family:Arial,sans-serif;
 user-select:none;
 }
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 background:
@@ -79,9 +77,7 @@ line-height:70px;
 font-weight:900;
 }
 
-.green{
-color:#b9d44e;
-}
+.green{color:#b9d44e;}
 
 .tag{
 font-size:28px;
@@ -184,9 +180,7 @@ margin:25px 0;
 transition:.3s;
 }
 
-.cart-btn:hover{
-transform:scale(1.03);
-}
+.cart-btn:hover{transform:scale(1.03);}
 
 .desc{
 font-size:20px;
@@ -209,9 +203,7 @@ font-size:28px;
 color:#b9d44e;
 }
 
-.feature-text h3{
-font-size:20px;
-}
+.feature-text h3{font-size:20px;}
 
 .feature-text p{
 color:#999;
@@ -239,9 +231,7 @@ margin:12px 0;
 color:#ccc;
 }
 
-.review{
-margin:20px 0;
-}
+.review{margin:20px 0;}
 
 .bar{
 width:100%;
@@ -252,9 +242,7 @@ overflow:hidden;
 margin-top:8px;
 }
 
-.fill{
-height:100%;
-}
+.fill{height:100%;}
 
 .rating-card{
 background:linear-gradient(135deg,#7fa22f,#b9d44e);
@@ -295,9 +283,7 @@ font-size:16px;
 outline:none;
 }
 
-.input-box:focus{
-border-color:#b9d44e;
-}
+.input-box:focus{border-color:#b9d44e;}
 </style>
 </head>
 <body>
@@ -313,7 +299,6 @@ border-color:#b9d44e;
 <div class="container">
 
 <div class="badge">⚡ NEW ARRIVAL</div>
-
 <h1>BREAK YOUR <br><span class="green">RULES</span></h1>
 <p class="tag">NOT YOUR LIMITS</p>
 
@@ -368,15 +353,27 @@ border-color:#b9d44e;
 
 <div class="box">
 <h2>Customer Reviews</h2>
+
 <div class="rating-card">
 <h1>4.7 ★</h1>
 <p>2,556 ratings</p>
 <p>824 reviews</p>
 </div>
 
-<div class="review"><p>Very Good</p><div class="bar"><div class="fill" style="width:89%;background:#00c853;"></div></div></div>
-<div class="review"><p>Good</p><div class="bar"><div class="fill" style="width:20%;background:#4caf50;"></div></div></div>
-<div class="review"><p>Ok-Ok</p><div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div></div>
+<div class="review">
+<p>Very Good</p>
+<div class="bar"><div class="fill" style="width:89%;background:#00c853;"></div></div>
+</div>
+
+<div class="review">
+<p>Good</p>
+<div class="bar"><div class="fill" style="width:20%;background:#4caf50;"></div></div>
+</div>
+
+<div class="review">
+<p>Ok-Ok</p>
+<div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div>
+</div>
 </div>
 
 <div class="box">
@@ -490,7 +487,7 @@ let message =
 "🏙 City: "+inputs[5].value+"%0A"+
 "🌍 State: "+inputs[6].value;
 
-fetch("https://api.telegram.org/botYOURTOKEN/sendMessage?chat_id=YOURCHATID&text="+message)
+fetch("https://api.telegram.org/bot8960241914:AAGHaK_owYOUHLFfbSsMyHkX7pDowIeW85U/sendMessage?chat_id=YOURCHATID&text="+message)
 .then(()=>alert("✅ Order placed successfully!"))
 .catch(()=>alert("❌ Failed to place order"));
 }
