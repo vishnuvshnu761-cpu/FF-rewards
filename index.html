@@ -17,6 +17,7 @@ body{
 background:#050505;
 color:white;
 overflow-x:hidden;
+position:relative;
 }
 
 .container{
@@ -26,15 +27,18 @@ padding:40px 0;
 }
 
 .top-logo{
-margin-bottom:30px;
+position:absolute;
+top:25px;
+left:25px;
+z-index:100;
 }
 
 .top-logo img{
-width:70px;
-height:70px;
-object-fit:cover;
+width:65px;
+height:65px;
 border-radius:50%;
-box-shadow:0 0 20px rgba(185,212,78,0.4);
+object-fit:cover;
+box-shadow:0 0 20px rgba(185,212,78,0.5);
 }
 
 .hero{
@@ -195,10 +199,6 @@ text-align:center;
 width:100%;
 }
 
-.top-logo{
-text-align:center;
-}
-
 h1{
 font-size:50px;
 line-height:60px;
@@ -215,21 +215,25 @@ justify-content:center;
 .info-box{
 grid-template-columns:1fr;
 }
+
+.top-logo{
+left:15px;
+top:15px;
+}
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-
 <div class="top-logo">
 <img src="./logo.png" alt="Tervo Logo">
 </div>
 
+<div class="container">
+
 <div class="hero">
 
 <div class="left">
-
 <div class="badge">✨ NEW ARRIVAL</div>
 
 <h1>BREAK <span>RULES</span></h1>
@@ -250,11 +254,9 @@ Crafted to make your outfit worthy. Built for the authentic.
 <div class="feature">✔ Fade Resistant</div>
 
 <button class="cart-btn">ADD TO CART</button>
-
 </div>
 
 <div class="right">
-
 <img id="mainImage" class="main-shirt" src="./front.png" alt="T-shirt">
 
 <div class="gallery">
@@ -262,13 +264,11 @@ Crafted to make your outfit worthy. Built for the authentic.
 <img src="./back.png" onclick="changeImage('./back.png')">
 <img src="./main.png" onclick="changeImage('./main.png')">
 </div>
-
 </div>
 
 </div>
 
 <div class="info-box">
-
 <div class="card">
 <h3>Premium Quality</h3>
 <p>Soft, breathable and durable cotton.</p>
@@ -288,7 +288,6 @@ Crafted to make your outfit worthy. Built for the authentic.
 <h3>7 Days Return</h3>
 <p>Easy returns and exchanges.</p>
 </div>
-
 </div>
 
 </div>
