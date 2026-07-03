@@ -308,11 +308,7 @@ border-color:#b9d44e;
 
 <div class="badge">⚡ NEW ARRIVAL</div>
 
-<h1>
-BREAK YOUR <br>
-<span class="green">RULES</span>
-</h1>
-
+<h1>BREAK YOUR <br><span class="green">RULES</span></h1>
 <p class="tag">NOT YOUR LIMITS</p>
 
 <img id="mainImage" class="main-shirt" src="back.png">
@@ -324,11 +320,11 @@ BREAK YOUR <br>
 </div>
 
 <div class="size-box">
-<button class="size active" type="button" onclick="selectSize(this)">S</button>
-<button class="size" type="button" onclick="selectSize(this)">M</button>
-<button class="size" type="button" onclick="selectSize(this)">L</button>
-<button class="size" type="button" onclick="selectSize(this)">XL</button>
-<button class="size" type="button" onclick="selectSize(this)">XXL</button>
+<button class="size active" onclick="selectSize(this)">S</button>
+<button class="size" onclick="selectSize(this)">M</button>
+<button class="size" onclick="selectSize(this)">L</button>
+<button class="size" onclick="selectSize(this)">XL</button>
+<button class="size" onclick="selectSize(this)">XXL</button>
 </div>
 
 <div class="price-box">
@@ -338,9 +334,7 @@ BREAK YOUR <br>
 
 <button class="cart-btn" onclick="showCheckout()">ADD TO CART</button>
 
-<p class="desc">
-Make a statement. Break the mold. Built for those who don’t follow the rules.
-</p>
+<p class="desc">Make a statement. Break the mold. Built for those who don’t follow the rules.</p>
 
 <div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Premium Cotton</h3><p>Soft breathable premium fabric</p></div></div>
 <div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Bold Print</h3><p>High quality long lasting print</p></div></div>
@@ -402,11 +396,11 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <h2>Checkout Details</h2>
 
 <div class="size-box">
-<button class="size active" type="button" onclick="selectCheckoutSize(this)">S</button>
-<button class="size" type="button" onclick="selectCheckoutSize(this)">M</button>
-<button class="size" type="button" onclick="selectCheckoutSize(this)">L</button>
-<button class="size" type="button" onclick="selectCheckoutSize(this)">XL</button>
-<button class="size" type="button" onclick="selectCheckoutSize(this)">XXL</button>
+<button class="size active" onclick="selectCheckoutSize(this)">S</button>
+<button class="size" onclick="selectCheckoutSize(this)">M</button>
+<button class="size" onclick="selectCheckoutSize(this)">L</button>
+<button class="size" onclick="selectCheckoutSize(this)">XL</button>
+<button class="size" onclick="selectCheckoutSize(this)">XXL</button>
 </div>
 
 <input type="text" placeholder="Full Name" class="input-box">
@@ -443,16 +437,16 @@ el.classList.add('active');
 
 function showCheckout(){
 document.getElementById("checkoutPage").style.display="block";
-document.getElementById("checkoutPage").scrollIntoView({
-behavior:"smooth"
-});
+document.getElementById("checkoutPage").scrollIntoView({behavior:"smooth"});
 }
 
 function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
+let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 
 let message =
 "🛒 New Order%0A%0A"+
+"👕 Size: "+selectedSize+"%0A"+
 "👤 Name: "+inputs[0].value+"%0A"+
 "📞 Phone: "+inputs[1].value+"%0A"+
 "📍 Pincode: "+inputs[2].value+"%0A"+
@@ -461,9 +455,9 @@ let message =
 "🏙 City: "+inputs[5].value+"%0A"+
 "🌍 State: "+inputs[6].value;
 
-fetch("https://api.telegram.org/bot8960241914:AAGnRym0jeaF9tzPmz2kXs3fX84ENW1YL_Y/sendMessage?chat_id=8960241914&text="+message)
-.then(()=>alert("Order placed successfully!"))
-.catch(()=>alert("Failed to place order"));
+fetch("https://api.telegram.org/bot8960241914:AAGHaK_owYOUHLFfbSsMyHkX7pDowIeW85U/sendMessage?chat_id=1318634457&text="+message)
+.then(()=>alert("✅ Order placed successfully!"))
+.catch(()=>alert("❌ Failed to place order"));
 }
 </script>
 
