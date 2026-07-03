@@ -253,13 +253,6 @@ color:#b9d44e;
 margin-bottom:20px;
 }
 
-.detail{
-display:flex;
-justify-content:space-between;
-margin:12px 0;
-color:#ccc;
-}
-
 .review{
 margin:20px 0;
 }
@@ -306,6 +299,18 @@ background:#0f0f0f;
 color:white;
 font-size:16px;
 outline:none;
+}
+
+#checkoutPage{
+display:none;
+opacity:0;
+transform:translateY(50px);
+transition:.4s ease;
+}
+
+#checkoutPage.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .success-popup{
@@ -383,11 +388,6 @@ h1{font-size:48px;line-height:50px;}
 
 <p class="desc">Make a statement. Break the mold. Built for those who don’t follow the rules.</p>
 
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Premium Cotton</h3><p>Soft breathable premium fabric</p></div></div>
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Bold Print</h3><p>High quality long lasting print</p></div></div>
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Oversized Fit</h3><p>Streetwear style fit</p></div></div>
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Fade Resistant</h3><p>Print stays fresh after wash</p></div></div>
-
 <div class="box">
 <h2>Customer Reviews</h2>
 
@@ -411,7 +411,6 @@ h1{font-size:48px;line-height:50px;}
 <p>Ok-Ok</p>
 <div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div>
 </div>
-
 </div>
 
 <div class="box">
@@ -421,7 +420,7 @@ h1{font-size:48px;line-height:50px;}
 <div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Worth every rupee.</div>
 </div>
 
-<div id="checkoutPage" class="box" style="display:none;">
+<div id="checkoutPage" class="box">
 <h2>Checkout Details</h2>
 
 <input type="text" placeholder="Full Name" class="input-box">
@@ -454,7 +453,17 @@ el.classList.add("active");
 }
 
 function showCheckout(){
-document.getElementById("checkoutPage").style.display="block";
+let checkout=document.getElementById("checkoutPage");
+
+checkout.style.display="block";
+
+setTimeout(()=>{
+checkout.classList.add("show");
+checkout.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+},100);
 }
 
 function placeOrder(){
