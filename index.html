@@ -107,10 +107,6 @@ cursor:pointer;
 transition:.3s;
 background:transparent;
 color:white;
-outline:none;
-appearance:none;
--webkit-appearance:none;
-touch-action:manipulation;
 }
 
 .size.active{
@@ -271,21 +267,6 @@ outline:none;
 .input-box:focus{
 border-color:#b9d44e;
 }
-
-@media(max-width:768px){
-h1{
-font-size:50px;
-line-height:55px;
-}
-
-.gallery img{
-width:75px;
-}
-
-.desc{
-font-size:18px;
-}
-}
 </style>
 </head>
 <body>
@@ -328,37 +309,10 @@ BREAK YOUR <br>
 Make a statement. Break the mold. Built for those who don’t follow the rules.
 </p>
 
-<div class="feature">
-<div class="feature-icon">✔</div>
-<div class="feature-text">
-<h3>Premium Cotton</h3>
-<p>Soft breathable premium fabric</p>
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon">✔</div>
-<div class="feature-text">
-<h3>Bold Print</h3>
-<p>High quality long lasting print</p>
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon">✔</div>
-<div class="feature-text">
-<h3>Oversized Fit</h3>
-<p>Streetwear style fit</p>
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon">✔</div>
-<div class="feature-text">
-<h3>Fade Resistant</h3>
-<p>Print stays fresh after wash</p>
-</div>
-</div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Premium Cotton</h3><p>Soft breathable premium fabric</p></div></div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Bold Print</h3><p>High quality long lasting print</p></div></div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Oversized Fit</h3><p>Streetwear style fit</p></div></div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Fade Resistant</h3><p>Print stays fresh after wash</p></div></div>
 
 <div class="box">
 <h2>Product Highlights</h2>
@@ -402,38 +356,25 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <p>Ok-Ok</p>
 <div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div>
 </div>
-
-<div class="review">
-<p>Bad</p>
-<div class="bar"><div class="fill" style="width:2%;background:#ff9800;"></div></div>
-</div>
-
-<div class="review">
-<p>Very Bad</p>
-<div class="bar"><div class="fill" style="width:2%;background:#f44336;"></div></div>
-</div>
-
 </div>
 
 <div class="box">
 <h2>Customer Testimonials</h2>
-
 <div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Amazing quality and perfect oversized fit.</div>
 <div class="testimonial">⭐️⭐️⭐️⭐️ Print quality is premium and looks stylish.</div>
 <div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Worth the price. Fast delivery and nice fabric.</div>
-
 </div>
 
 <div id="checkoutPage" class="box" style="display:none;">
 <h2>Checkout Details</h2>
 
-<input type="text" class="input-box" placeholder="Full Name">
-<input type="tel" class="input-box" placeholder="Phone Number">
-<input type="text" class="input-box" placeholder="Pincode">
-<input type="text" class="input-box" placeholder="House No / Flat No">
-<input type="text" class="input-box" placeholder="Address">
-<input type="text" class="input-box" placeholder="City">
-<input type="text" class="input-box" placeholder="State">
+<input type="text" placeholder="Full Name" class="input-box">
+<input type="tel" placeholder="Phone Number" class="input-box">
+<input type="text" placeholder="Pincode" class="input-box">
+<input type="text" placeholder="House No / Flat No" class="input-box">
+<input type="text" placeholder="Address" class="input-box">
+<input type="text" placeholder="City" class="input-box">
+<input type="text" placeholder="State" class="input-box">
 
 <button class="cart-btn">PLACE ORDER</button>
 </div>
