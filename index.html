@@ -17,6 +17,10 @@ font-family:Arial,sans-serif;
 user-select:none;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:
 radial-gradient(circle at top right, rgba(185,212,78,0.12), transparent 35%),
@@ -83,6 +87,21 @@ color:#b9d44e;
 font-size:28px;
 font-weight:bold;
 margin:20px 0;
+}
+
+.stock-alert{
+color:#ff4d4d;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+margin:15px 0;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:1;}
+50%{opacity:.5;}
+100%{opacity:1;}
 }
 
 .main-shirt{
@@ -184,6 +203,20 @@ transition:.3s;
 transform:scale(1.03);
 }
 
+.trust-box,.box,.testimonial{
+background:#111;
+padding:18px;
+border-radius:15px;
+margin:20px 0;
+border:1px solid #222;
+}
+
+.trust-item{
+margin:10px 0;
+font-size:16px;
+color:#ddd;
+}
+
 .desc{
 font-size:20px;
 color:#aaa;
@@ -213,14 +246,6 @@ font-size:20px;
 color:#999;
 font-size:15px;
 margin-top:5px;
-}
-
-.box{
-background:linear-gradient(180deg,#111,#0b0f08);
-padding:20px;
-border-radius:20px;
-margin-top:30px;
-border:1px solid rgba(255,255,255,0.06);
 }
 
 .box h2{
@@ -271,14 +296,6 @@ margin-top:10px;
 font-size:22px;
 }
 
-.testimonial{
-background:#111;
-padding:15px;
-border-radius:15px;
-margin:15px 0;
-border:1px solid #222;
-}
-
 .input-box{
 width:100%;
 padding:16px;
@@ -291,8 +308,28 @@ font-size:16px;
 outline:none;
 }
 
-.input-box:focus{
-border-color:#b9d44e;
+.success-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+}
+
+.checkmark{
+font-size:80px;
+color:#b9d44e;
+}
+
+@media(max-width:768px){
+h1{font-size:48px;line-height:50px;}
+.tag{font-size:20px;}
 }
 </style>
 </head>
@@ -312,6 +349,8 @@ border-color:#b9d44e;
 
 <h1>BREAK YOUR <br><span class="green">RULES</span></h1>
 <p class="tag">NOT YOUR LIMITS</p>
+
+<div class="stock-alert">🔥 Only 12 pieces left in stock</div>
 
 <img id="mainImage" class="main-shirt" src="back.png">
 
@@ -336,31 +375,18 @@ border-color:#b9d44e;
 
 <button class="cart-btn" onclick="showCheckout()">ADD TO CART</button>
 
+<div class="trust-box">
+<div class="trust-item">✔ 7 Days Replacement</div>
+<div class="trust-item">✔ Secure Checkout</div>
+<div class="trust-item">✔ Cash On Delivery Available</div>
+</div>
+
 <p class="desc">Make a statement. Break the mold. Built for those who don’t follow the rules.</p>
 
 <div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Premium Cotton</h3><p>Soft breathable premium fabric</p></div></div>
 <div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Bold Print</h3><p>High quality long lasting print</p></div></div>
 <div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Oversized Fit</h3><p>Streetwear style fit</p></div></div>
 <div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Fade Resistant</h3><p>Print stays fresh after wash</p></div></div>
-
-<div class="box">
-<h2>Product Highlights</h2>
-<div class="detail"><span>Fabric</span><span>Cotton Blend</span></div>
-<div class="detail"><span>Color</span><span>Green</span></div>
-<div class="detail"><span>Fit/Shape</span><span>Loose</span></div>
-<div class="detail"><span>Length</span><span>Regular</span></div>
-</div>
-
-<div class="box">
-<h2>Additional Details</h2>
-<div class="detail"><span>Neck</span><span>Round</span></div>
-<div class="detail"><span>Sleeve Length</span><span>Short Sleeves</span></div>
-<div class="detail"><span>Sleeve Styling</span><span>Regular</span></div>
-<div class="detail"><span>Pattern</span><span>Printed</span></div>
-<div class="detail"><span>Print Type</span><span>Back Print</span></div>
-<div class="detail"><span>Occasion</span><span>Casual</span></div>
-<div class="detail"><span>Country</span><span>India</span></div>
-</div>
 
 <div class="box">
 <h2>Customer Reviews</h2>
@@ -385,32 +411,18 @@ border-color:#b9d44e;
 <p>Ok-Ok</p>
 <div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div>
 </div>
+
 </div>
 
 <div class="box">
 <h2>Customer Testimonials</h2>
 <div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Amazing quality and perfect oversized fit.</div>
-<div class="testimonial">⭐️⭐️⭐️⭐️ Print quality is premium and looks stylish.</div>
-<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Worth the price. Fast delivery and nice fabric.</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️ Premium print quality.</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Worth every rupee.</div>
 </div>
 
 <div id="checkoutPage" class="box" style="display:none;">
 <h2>Checkout Details</h2>
-
-<div class="size-box">
-<button class="size active" onclick="selectCheckoutSize(this)">S</button>
-<button class="size" onclick="selectCheckoutSize(this)">M</button>
-<button class="size" onclick="selectCheckoutSize(this)">L</button>
-<button class="size" onclick="selectCheckoutSize(this)">XL</button>
-<button class="size" onclick="selectCheckoutSize(this)">XXL</button>
-</div>
-
-<h3>Quantity</h3>
-<div class="size-box">
-<button class="size" onclick="decreaseQty()">-</button>
-<div class="size active" id="qtyBox">1</div>
-<button class="size" onclick="increaseQty()">+</button>
-</div>
 
 <input type="text" placeholder="Full Name" class="input-box">
 <input type="tel" placeholder="Phone Number" class="input-box">
@@ -420,87 +432,48 @@ border-color:#b9d44e;
 <input type="text" placeholder="City" class="input-box">
 <input type="text" placeholder="State" class="input-box">
 
-<button class="cart-btn" onclick="placeOrder()">PLACE ORDER</button>
+<button class="cart-btn" id="orderBtn" onclick="placeOrder()">PLACE ORDER</button>
 </div>
 
+</div>
+
+<div class="success-popup" id="successPopup">
+<div class="checkmark">✔</div>
+<h2>Order Confirmed!</h2>
+<p>Your order has been placed successfully.</p>
 </div>
 
 <script>
-let quantity = 1;
-
 function changeImage(src){
-document.getElementById("mainImage").src = src;
+document.getElementById("mainImage").src=src;
 }
 
 function selectSize(el){
-document.querySelectorAll('.container > .size-box .size').forEach(btn=>{
-btn.classList.remove('active');
-});
-el.classList.add('active');
-}
-
-function selectCheckoutSize(el){
-document.querySelectorAll('#checkoutPage .size').forEach(btn=>{
-if(btn.id !== "qtyBox" && btn.innerText !== "+" && btn.innerText !== "-"){
-btn.classList.remove('active');
-}
-});
-el.classList.add('active');
-}
-
-function increaseQty(){
-quantity++;
-document.getElementById("qtyBox").innerText = quantity;
-}
-
-function decreaseQty(){
-if(quantity > 1){
-quantity--;
-document.getElementById("qtyBox").innerText = quantity;
-}
+document.querySelectorAll(".size").forEach(btn=>btn.classList.remove("active"));
+el.classList.add("active");
 }
 
 function showCheckout(){
 document.getElementById("checkoutPage").style.display="block";
-document.getElementById("checkoutPage").scrollIntoView({behavior:"smooth"});
 }
 
 function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
-let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 
-for(let i=0;i<inputs.length;i++){
-if(inputs[i].value.trim()===""){
-alert("⚠ Please fill all fields");
-return;
-}
-}
-
-if(inputs[1].value.length < 10){
-alert("⚠ Enter valid phone number");
-return;
-}
-
-if(inputs[2].value.length < 6){
-alert("⚠ Enter valid pincode");
-return;
-}
-
-let message =
-"🛒 New Order%0A%0A"+
-"👕 Size: "+selectedSize+"%0A"+
-"📦 Quantity: "+quantity+"%0A"+
-"👤 Name: "+inputs[0].value+"%0A"+
-"📞 Phone: "+inputs[1].value+"%0A"+
-"📍 Pincode: "+inputs[2].value+"%0A"+
-"🏠 House: "+inputs[3].value+"%0A"+
-"📌 Address: "+inputs[4].value+"%0A"+
-"🏙 City: "+inputs[5].value+"%0A"+
-"🌍 State: "+inputs[6].value;
+let message=
+"🛒 New Order%0A"+
+"👤 Name: "+inputs[0].value+
+"%0A📞 Phone: "+inputs[1].value+
+"%0A📍 Pincode: "+inputs[2].value+
+"%0A🏠 House: "+inputs[3].value+
+"%0A📌 Address: "+inputs[4].value+
+"%0A🏙 City: "+inputs[5].value+
+"%0A🌍 State: "+inputs[6].value;
 
 fetch("https://api.telegram.org/bot8960241914:AAGHaK_owYOUHLFfbSsMyHkX7pDowIeW85U/sendMessage?chat_id=1318634457&text="+message)
-.then(()=>alert("✅ Order placed successfully!"))
-.catch(()=>alert("❌ Failed to place order"));
+.then(()=>{
+document.getElementById("successPopup").style.display="flex";
+});
 }
 </script>
 
