@@ -101,9 +101,14 @@ font-size:20px;
 font-weight:bold;
 cursor:pointer;
 transition:.3s;
+background:transparent;
+color:white;
+user-select:none;
+-webkit-user-select:none;
+-webkit-touch-callout:none;
 }
 
-.size:hover{
+.size.active{
 background:#b9d44e;
 color:black;
 }
@@ -259,11 +264,11 @@ BREAK YOUR <br>
 </div>
 
 <div class="size-box">
-<div class="size">S</div>
-<div class="size">M</div>
-<div class="size">L</div>
-<div class="size">XL</div>
-<div class="size">XXL</div>
+<button class="size active" onclick="selectSize(this)">S</button>
+<button class="size" onclick="selectSize(this)">M</button>
+<button class="size" onclick="selectSize(this)">L</button>
+<button class="size" onclick="selectSize(this)">XL</button>
+<button class="size" onclick="selectSize(this)">XXL</button>
 </div>
 
 <button class="cart-btn">ADD TO CART</button>
@@ -381,6 +386,13 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <script>
 function changeImage(src){
 document.getElementById("mainImage").src = src;
+}
+
+function selectSize(el){
+document.querySelectorAll('.size').forEach(btn=>{
+btn.classList.remove('active');
+});
+el.classList.add('active');
 }
 </script>
 
