@@ -31,6 +31,7 @@ justify-content:space-between;
 align-items:center;
 flex-wrap:wrap;
 min-height:100vh;
+gap:40px;
 }
 
 .left,.right{
@@ -49,6 +50,7 @@ margin-bottom:20px;
 h1{
 font-size:80px;
 line-height:90px;
+font-weight:bold;
 }
 
 h1 span{
@@ -66,6 +68,20 @@ line-height:1.7;
 margin-bottom:20px;
 }
 
+.price{
+font-size:35px;
+font-weight:bold;
+color:#b9d44e;
+margin:20px 0;
+}
+
+.price span{
+font-size:22px;
+text-decoration:line-through;
+color:gray;
+margin-left:10px;
+}
+
 .feature{
 margin:15px 0;
 font-size:18px;
@@ -73,13 +89,14 @@ font-size:18px;
 
 .main-shirt{
 width:100%;
-max-width:420px;
+max-width:500px;
 animation:float 4s infinite ease-in-out;
-transition:.4s;
+transition:0.4s;
 }
 
 .main-shirt:hover{
 transform:scale(1.05);
+filter:drop-shadow(0 0 20px rgba(185,212,78,0.4));
 }
 
 .gallery{
@@ -89,8 +106,8 @@ margin-top:20px;
 }
 
 .gallery img{
-width:90px;
-border-radius:10px;
+width:95px;
+border-radius:12px;
 cursor:pointer;
 transition:.3s;
 border:2px solid transparent;
@@ -99,12 +116,13 @@ border:2px solid transparent;
 .gallery img:hover{
 transform:scale(1.1);
 border:2px solid #b9d44e;
+box-shadow:0 0 20px rgba(185,212,78,0.4);
 }
 
 .cart-btn{
 margin-top:30px;
 padding:18px 35px;
-background:#b9d44e;
+background:linear-gradient(135deg,#b9d44e,#d4ff5c);
 border:none;
 border-radius:15px;
 font-size:24px;
@@ -112,6 +130,11 @@ font-weight:bold;
 cursor:pointer;
 box-shadow:0 0 25px #b9d44e;
 animation:pulse 2s infinite;
+transition:0.3s;
+}
+
+.cart-btn:hover{
+transform:scale(1.05);
 }
 
 .info-box{
@@ -123,9 +146,15 @@ margin-top:50px;
 
 .card{
 background:#111;
-padding:20px;
+padding:25px;
 border-radius:15px;
 border:1px solid #222;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#b9d44e;
 }
 
 .card h3{
@@ -145,6 +174,11 @@ margin-bottom:10px;
 }
 
 @media(max-width:768px){
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
 .left,.right{
 width:100%;
 }
@@ -155,11 +189,15 @@ line-height:60px;
 }
 
 .main-shirt{
-max-width:280px;
+max-width:320px;
 }
 
 .gallery{
 justify-content:center;
+}
+
+.info-box{
+grid-template-columns:1fr;
 }
 }
 </style>
@@ -178,8 +216,12 @@ justify-content:center;
 <p class="tag">NOT YOUR LIMITS</p>
 
 <p class="desc">
-Premium oversized streetwear for rule breakers.
+Crafted to make your outfit worthy. Built for the authentic.
 </p>
+
+<div class="price">
+₹799 <span>₹1299</span>
+</div>
 
 <div class="feature">✔ Premium Cotton</div>
 <div class="feature">✔ Bold Print</div>
@@ -190,7 +232,7 @@ Premium oversized streetwear for rule breakers.
 </div>
 
 <div class="right">
-<img id="mainImage" class="main-shirt" src="./back.png" alt="T-shirt">
+<img id="mainImage" class="main-shirt" src="./front.png" alt="T-shirt">
 
 <div class="gallery">
 <img src="./front.png" onclick="changeImage('./front.png')">
@@ -209,7 +251,7 @@ Premium oversized streetwear for rule breakers.
 
 <div class="card">
 <h3>Streetwear Style</h3>
-<p>Perfect for fashion lovers.</p>
+<p>Perfect for modern fashion lovers.</p>
 </div>
 
 <div class="card">
@@ -227,18 +269,24 @@ Premium oversized streetwear for rule breakers.
 
 <script>
 function changeImage(src){
-document.getElementById("mainImage").src = src;
+let img=document.getElementById("mainImage");
+img.style.opacity="0";
+
+setTimeout(()=>{
+img.src=src;
+img.style.opacity="1";
+},300);
 }
 
-let images = ["./front.png","./back.png","./main.png"];
-let current = 0;
+let images=["./front.png","./back.png","./main.png"];
+let current=0;
 
 setInterval(()=>{
 current++;
-if(current >= images.length){
-current = 0;
+if(current>=images.length){
+current=0;
 }
-document.getElementById("mainImage").src = images[current];
+changeImage(images[current]);
 },3000);
 </script>
 
