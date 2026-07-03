@@ -185,30 +185,6 @@ line-height:1.6;
 margin-bottom:30px;
 }
 
-.feature{
-display:flex;
-align-items:center;
-gap:15px;
-margin:20px 0;
-padding-bottom:15px;
-border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.feature-icon{
-font-size:28px;
-color:#b9d44e;
-}
-
-.feature-text h3{
-font-size:20px;
-}
-
-.feature-text p{
-color:#999;
-font-size:15px;
-margin-top:5px;
-}
-
 .box{
 background:linear-gradient(180deg,#111,#0b0f08);
 padding:20px;
@@ -220,13 +196,6 @@ border:1px solid rgba(255,255,255,0.06);
 .box h2{
 color:#b9d44e;
 margin-bottom:20px;
-}
-
-.detail{
-display:flex;
-justify-content:space-between;
-margin:12px 0;
-color:#ccc;
 }
 
 .review{
@@ -257,12 +226,6 @@ color:black;
 
 .rating-card h1{
 font-size:70px;
-line-height:70px;
-}
-
-.rating-card p{
-margin-top:10px;
-font-size:22px;
 }
 
 .testimonial{
@@ -453,7 +416,7 @@ let message =
 "🏙 City: "+inputs[5].value+"%0A"+
 "🌍 State: "+inputs[6].value;
 
-fetch("https://api.telegram.org/bot8960241914:AAGHaK_owYOUHLFfbSsMyHkX7pDowIeW85U/sendMessage?chat_id=1318634457&text="+message)
+fetch("https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage?chat_id=YOUR_CHAT_ID&text="+message)
 .then(()=>alert("✅ Order placed successfully!"))
 .catch(()=>alert("❌ Failed to place order"));
 }
