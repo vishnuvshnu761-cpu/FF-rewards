@@ -417,7 +417,7 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <input type="text" placeholder="City" class="input-box">
 <input type="text" placeholder="State" class="input-box">
 
-<button class="cart-btn">PLACE ORDER</button>
+<button class="cart-btn" onclick="placeOrder()">PLACE ORDER</button>
 </div>
 
 </div>
@@ -446,6 +446,24 @@ document.getElementById("checkoutPage").style.display="block";
 document.getElementById("checkoutPage").scrollIntoView({
 behavior:"smooth"
 });
+}
+
+function placeOrder(){
+let inputs=document.querySelectorAll(".input-box");
+
+let message =
+"🛒 New Order%0A%0A"+
+"👤 Name: "+inputs[0].value+"%0A"+
+"📞 Phone: "+inputs[1].value+"%0A"+
+"📍 Pincode: "+inputs[2].value+"%0A"+
+"🏠 House: "+inputs[3].value+"%0A"+
+"📌 Address: "+inputs[4].value+"%0A"+
+"🏙 City: "+inputs[5].value+"%0A"+
+"🌍 State: "+inputs[6].value;
+
+fetch("https://api.telegram.org/bot8960241914:AAGnRym0jeaF9tzPmz2kXs3fX84ENW1YL_Y/sendMessage?chat_id=8960241914&text="+message)
+.then(()=>alert("Order placed successfully!"))
+.catch(()=>alert("Failed to place order"));
 }
 </script>
 
