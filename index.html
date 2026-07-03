@@ -6,229 +6,173 @@
 <title>Tervo Store</title>
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
+
 body{
-    background:#111;
-    color:white;
+background:#0a0a0a;
+color:white;
 }
+
 header{
-    text-align:center;
-    padding:20px;
-    background:#000;
-    border-bottom:1px solid #333;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:black;
+position:fixed;
+width:100%;
+top:0;
+z-index:100;
 }
-header h1{
-    font-size:32px;
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:red;
 }
-header p{
-    color:#aaa;
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+transition:0.3s;
 }
-.container{
-    width:90%;
-    margin:auto;
-    padding:20px 0;
+
+nav a:hover{
+color:red;
 }
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+margin:20px 0;
+font-size:18px;
+}
+
+.btn{
+padding:12px 30px;
+background:red;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+color:black;
+}
+
 .products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+padding:100px 50px;
+text-align:center;
 }
+
+.products h2{
+margin-bottom:40px;
+font-size:40px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
 .card{
-    background:#1a1a1a;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 0 15px rgba(255,255,255,0.1);
+background:#111;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
 }
+
+.card:hover{
+transform:translateY(-10px);
+}
+
 .card img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
+width:100%;
+border-radius:10px;
 }
-.card-content{
-    padding:15px;
+
+.card h3{
+margin:15px 0;
 }
-.card h2{
-    font-size:20px;
-    margin-bottom:10px;
-}
-.price{
-    color:#00ff99;
-    font-size:18px;
-    margin-bottom:10px;
-}
-select{
-    width:100%;
-    padding:10px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:8px;
-}
-.buy-btn{
-    display:block;
-    text-align:center;
-    padding:12px;
-    background:#00ff99;
-    color:black;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
+
 footer{
-    text-align:center;
-    padding:20px;
-    color:#777;
+padding:30px;
+text-align:center;
+background:black;
+margin-top:50px;
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Tervo Store</h1>
-    <p>Crafted to make your outfit worthy ✨</p>
+<div class="logo">TERVO</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
 </header>
 
-<div class="container">
-    <div class="products">
+<section class="hero">
+<div>
+<h1>Wear Your Identity</h1>
+<p>Crafted to make your outfit worthy.</p>
+<a href="#" class="btn">Shop Now</a>
+</div>
+</section>
 
-        <div class="card">
-            <img src="shirt1.jpg" alt="T-shirt 1">
-            <div class="card-content">
-                <h2>Oversized Black Tee</h2>
-                <p class="price">₹599</p>
-                <select>
-                    <option>Select Size</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-                <a class="buy-btn" href="https://wa.me/919999999999?text=I want to order Oversized Black Tee">
-                    Order on WhatsApp
-                </a>
-            </div>
-        </div>
+<section class="products">
+<h2>New Drops</h2>
+<div class="product-grid">
 
-        <div class="card">
-            <img src="shirt2.jpg" alt="T-shirt 2">
-            <div class="card-content">
-                <h2>Anime Graphic Tee</h2>
-                <p class="price">₹699</p>
-                <select>
-                    <option>Select Size</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-                <a class="buy-btn" href="https://wa.me/919999999999?text=I want to order Anime Graphic Tee">
-                    Order on WhatsApp
-                </a>
-            </div>
-        </div>
-
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723" alt="">
+<h3>Oversized Tee</h3>
+<p>₹799</p>
 </div>
 
-<footer>
-    © 2026 Tervo Store. All rights reserved.
-</footer>
-
-</body>
-</html><div class="container">
-
-    <div class="verify-box">
-        <h3>Enter Free Fire UID</h3>
-        <input type="text" id="uid" placeholder="Enter UID">
-        <button onclick="verifyUID()">Verify</button>
-        <p id="status"></p>
-    </div>
-
-    <div class="title">
-        <h1>Top Up Centre</h1>
-        <p>Pick your diamond pack</p>
-    </div>
-
-    <div class="packages">
-
-        <div class="card">
-            <h2>100 Diamonds</h2>
-            <p>+10 Bonus</p>
-            <div class="price">₹49</div>
-            <button class="buy-btn" onclick="buy('100 Diamonds','49')">Buy</button>
-        </div>
-
-        <div class="card">
-            <h2>310 Diamonds</h2>
-            <p>+31 Bonus</p>
-            <div class="price">₹99</div>
-            <button class="buy-btn" onclick="buy('310 Diamonds','99')">Buy</button>
-        </div>
-
-        <div class="card">
-            <h2>520 Diamonds</h2>
-            <p>+52 Bonus</p>
-            <div class="price">₹149</div>
-            <button class="buy-btn" onclick="buy('520 Diamonds','149')">Buy</button>
-        </div>
-
-        <div class="card">
-            <h2>1060 Diamonds</h2>
-            <p>+106 Bonus</p>
-            <div class="price">₹299</div>
-            <button class="buy-btn" onclick="buy('1060 Diamonds','299')">Buy</button>
-        </div>
-
-        <div class="card">
-            <h2>2180 Diamonds</h2>
-            <p>+218 Bonus</p>
-            <div class="price">₹499</div>
-            <button class="buy-btn" onclick="buy('2180 Diamonds','499')">Buy</button>
-        </div>
-
-        <div class="card">
-            <h2>5600 Diamonds</h2>
-            <p>+560 Bonus</p>
-            <div class="price">₹799</div>
-            <button class="buy-btn" onclick="buy('5600 Diamonds','799')">Buy</button>
-        </div>
-
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="">
+<h3>Anime Tee</h3>
+<p>₹899</p>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="">
+<h3>Street Hoodie</h3>
+<p>₹1299</p>
+</div>
+
+</div>
+</section>
+
 <footer>
-    © 2026 FireTopUp. All rights reserved.
+<p>© 2026 Tervo Store. All Rights Reserved.</p>
 </footer>
-
-<script>
-function verifyUID(){
-    let uid = document.getElementById("uid").value;
-    let status = document.getElementById("status");
-
-    if(uid.length < 6){
-        status.innerHTML = "❌ Invalid UID";
-        status.style.color = "red";
-    } else {
-        status.innerHTML = "✅ UID Verified";
-        status.style.color = "green";
-    }
-}
-
-function buy(pack, price){
-    let uid = document.getElementById("uid").value;
-
-    if(uid == ""){
-        alert("Enter UID first");
-        return;
-    }
-
-    // Replace with your Razorpay payment link
-    window.location.href = "https://superprofile.bio/vp/6FX1cx-L";
-}
-</script>
 
 </body>
 </html>
