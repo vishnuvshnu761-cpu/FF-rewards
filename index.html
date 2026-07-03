@@ -405,6 +405,13 @@ border-color:#b9d44e;
 <button class="size" onclick="selectCheckoutSize(this)">XXL</button>
 </div>
 
+<h3>Quantity</h3>
+<div class="size-box">
+<button class="size" onclick="decreaseQty()">-</button>
+<div class="size active" id="qtyBox">1</div>
+<button class="size" onclick="increaseQty()">+</button>
+</div>
+
 <input type="text" placeholder="Full Name" class="input-box">
 <input type="tel" placeholder="Phone Number" class="input-box">
 <input type="text" placeholder="Pincode" class="input-box">
@@ -419,6 +426,8 @@ border-color:#b9d44e;
 </div>
 
 <script>
+let quantity = 1;
+
 function changeImage(src){
 document.getElementById("mainImage").src = src;
 }
@@ -432,9 +441,23 @@ el.classList.add('active');
 
 function selectCheckoutSize(el){
 document.querySelectorAll('#checkoutPage .size').forEach(btn=>{
+if(btn.id !== "qtyBox" && btn.innerText !== "+" && btn.innerText !== "-"){
 btn.classList.remove('active');
+}
 });
 el.classList.add('active');
+}
+
+function increaseQty(){
+quantity++;
+document.getElementById("qtyBox").innerText = quantity;
+}
+
+function decreaseQty(){
+if(quantity > 1){
+quantity--;
+document.getElementById("qtyBox").innerText = quantity;
+}
 }
 
 function showCheckout(){
@@ -449,6 +472,7 @@ let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 let message =
 "🛒 New Order%0A%0A"+
 "👕 Size: "+selectedSize+"%0A"+
+"📦 Quantity: "+quantity+"%0A"+
 "👤 Name: "+inputs[0].value+"%0A"+
 "📞 Phone: "+inputs[1].value+"%0A"+
 "📍 Pincode: "+inputs[2].value+"%0A"+
