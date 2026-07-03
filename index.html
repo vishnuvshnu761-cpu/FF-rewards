@@ -25,7 +25,6 @@ linear-gradient(180deg,#050505 0%, #0a0f05 40%, #111707 100%);
 color:white;
 }
 
-/* TOP RUNNING STRIP */
 .top-strip{
 width:100%;
 background:#111;
@@ -49,12 +48,8 @@ padding-right:50px;
 }
 
 @keyframes run{
-0%{
-transform:translateX(100%);
-}
-100%{
-transform:translateX(-100%);
-}
+0%{transform:translateX(100%);}
+100%{transform:translateX(-100%);}
 }
 
 .container{
@@ -80,9 +75,7 @@ line-height:70px;
 font-weight:900;
 }
 
-.green{
-color:#b9d44e;
-}
+.green{color:#b9d44e;}
 
 .tag{
 font-size:28px;
@@ -408,6 +401,14 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <div id="checkoutPage" class="box" style="display:none;">
 <h2>Checkout Details</h2>
 
+<div class="size-box">
+<button class="size active" type="button" onclick="selectCheckoutSize(this)">S</button>
+<button class="size" type="button" onclick="selectCheckoutSize(this)">M</button>
+<button class="size" type="button" onclick="selectCheckoutSize(this)">L</button>
+<button class="size" type="button" onclick="selectCheckoutSize(this)">XL</button>
+<button class="size" type="button" onclick="selectCheckoutSize(this)">XXL</button>
+</div>
+
 <input type="text" placeholder="Full Name" class="input-box">
 <input type="tel" placeholder="Phone Number" class="input-box">
 <input type="text" placeholder="Pincode" class="input-box">
@@ -427,7 +428,14 @@ document.getElementById("mainImage").src = src;
 }
 
 function selectSize(el){
-document.querySelectorAll('.size').forEach(btn=>{
+document.querySelectorAll('.container > .size-box .size').forEach(btn=>{
+btn.classList.remove('active');
+});
+el.classList.add('active');
+}
+
+function selectCheckoutSize(el){
+document.querySelectorAll('#checkoutPage .size').forEach(btn=>{
 btn.classList.remove('active');
 });
 el.classList.add('active');
