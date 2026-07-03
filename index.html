@@ -6,173 +6,198 @@
 <title>Tervo Store</title>
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
-
 body{
-background:#0a0a0a;
-color:white;
+    background:#0b0b0b;
+    color:white;
 }
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 50px;
-background:black;
-position:fixed;
-width:100%;
-top:0;
-z-index:100;
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
 }
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:red;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:red;
-}
-
 .hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518');
-background-size:cover;
-background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
 }
-
-.hero h1{
-font-size:60px;
+.left{
+    flex:1;
 }
-
-.hero p{
-margin:20px 0;
-font-size:18px;
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #9db640;
+    border-radius:30px;
+    color:#c6df65;
+    margin-bottom:20px;
 }
-
-.btn{
-padding:12px 30px;
-background:red;
-color:white;
-text-decoration:none;
-border-radius:8px;
-transition:0.3s;
+h1{
+    font-size:80px;
+    line-height:80px;
 }
-
-.btn:hover{
-background:white;
-color:black;
+h1 span{
+    color:#9db640;
 }
-
-.products{
-padding:100px 50px;
-text-align:center;
+.tagline{
+    font-size:20px;
+    margin:20px 0;
+    font-weight:bold;
 }
-
-.products h2{
-margin-bottom:40px;
-font-size:40px;
+.desc{
+    color:#ccc;
+    max-width:500px;
+    line-height:1.8;
 }
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.features{
+    margin-top:30px;
 }
-
+.features li{
+    list-style:none;
+    margin:15px 0;
+    font-size:18px;
+}
+.right{
+    flex:1;
+    text-align:center;
+}
+.right img{
+    width:100%;
+    max-width:500px;
+    border-radius:20px;
+}
+.sizes{
+    margin-top:30px;
+}
+.size-btn{
+    padding:12px 20px;
+    border:1px solid #9db640;
+    background:transparent;
+    color:white;
+    margin-right:10px;
+    border-radius:10px;
+    cursor:pointer;
+}
+.cta{
+    margin-top:40px;
+}
+.cta button{
+    width:100%;
+    max-width:400px;
+    padding:20px;
+    font-size:25px;
+    background:#9db640;
+    border:none;
+    border-radius:15px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 20px #9db640;
+}
+.benefits{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 .card{
-background:#111;
-padding:20px;
-border-radius:10px;
-transition:0.3s;
+    background:#111;
+    padding:20px;
+    border:1px solid #222;
+    border-radius:15px;
 }
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
 .card h3{
-margin:15px 0;
+    color:#9db640;
+    margin-bottom:10px;
 }
-
-footer{
-padding:30px;
-text-align:center;
-background:black;
-margin-top:50px;
+.footer{
+    margin-top:60px;
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #222;
+    color:#888;
+}
+@media(max-width:768px){
+    h1{
+        font-size:50px;
+        line-height:50px;
+    }
 }
 </style>
 </head>
 <body>
 
-<header>
-<div class="logo">TERVO</div>
-<nav>
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</nav>
-</header>
+<div class="container">
+    <div class="hero">
+        
+        <div class="left">
+            <div class="badge">✨ NEW ARRIVAL</div>
+            
+            <h1>BREAK <span>RULES</span></h1>
+            
+            <p class="tagline">NOT YOUR LIMITS</p>
+            
+            <p class="desc">
+                Make a statement. Break the mold. Built for those who don’t follow the rules.
+            </p>
 
-<section class="hero">
-<div>
-<h1>Wear Your Identity</h1>
-<p>Crafted to make your outfit worthy.</p>
-<a href="#" class="btn">Shop Now</a>
+            <ul class="features">
+                <li>✔ Premium Cotton</li>
+                <li>✔ Bold Print</li>
+                <li>✔ Oversized Fit</li>
+                <li>✔ Fade Resistant</li>
+            </ul>
+
+            <div class="sizes">
+                <button class="size-btn">S</button>
+                <button class="size-btn">M</button>
+                <button class="size-btn">L</button>
+                <button class="size-btn">XL</button>
+                <button class="size-btn">XXL</button>
+            </div>
+
+            <div class="cta">
+                <button>Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="shirt.png" alt="Break Rules T-shirt">
+        </div>
+
+    </div>
+
+    <div class="benefits">
+        <div class="card">
+            <h3>Unique Design</h3>
+            <p>Stand out with premium streetwear style.</p>
+        </div>
+
+        <div class="card">
+            <h3>Unisex Style</h3>
+            <p>Made for everyone who loves oversized fashion.</p>
+        </div>
+
+        <div class="card">
+            <h3>7 Days Return</h3>
+            <p>Easy return policy for worry-free shopping.</p>
+        </div>
+
+        <div class="card">
+            <h3>COD Available</h3>
+            <p>Cash on delivery across India.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Tervo Store. All rights reserved.
+    </div>
 </div>
-</section>
-
-<section class="products">
-<h2>New Drops</h2>
-<div class="product-grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723" alt="">
-<h3>Oversized Tee</h3>
-<p>₹799</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="">
-<h3>Anime Tee</h3>
-<p>₹899</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="">
-<h3>Street Hoodie</h3>
-<p>₹1299</p>
-</div>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 Tervo Store. All Rights Reserved.</p>
-</footer>
 
 </body>
 </html>
