@@ -38,26 +38,297 @@ gap:40px;
 width:45%;
 }
 
-.logo-box{
-display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:25px;
+.badge{
+display:inline-block;
+padding:10px 20px;
+border:1px solid #b9d44e;
+border-radius:30px;
+color:#b9d44e;
+margin-bottom:20px;
 }
 
-.logo-box img{
-width:50px;
-height:50px;
-border-radius:50%;
-object-fit:cover;
+h1{
+font-size:80px;
+line-height:90px;
+font-weight:bold;
+}
+
+h1 span{
+color:#b9d44e;
+}
+
+.tag{
+font-size:30px;
+margin:20px 0;
+}
+
+.desc{
+color:#aaa;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.price{
+font-size:35px;
+font-weight:bold;
+color:#b9d44e;
+margin:20px 0;
+}
+
+.price span{
+font-size:22px;
+text-decoration:line-through;
+color:gray;
+margin-left:10px;
+}
+
+.feature{
+margin:15px 0;
+font-size:18px;
+}
+
+.main-shirt{
+width:100%;
+max-width:500px;
+animation:float 4s infinite ease-in-out;
+transition:0.4s;
+}
+
+.main-shirt:hover{
+transform:scale(1.05);
+filter:drop-shadow(0 0 20px rgba(185,212,78,0.4));
+}
+
+.gallery{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:95px;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+border:2px solid transparent;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+border:2px solid #b9d44e;
 box-shadow:0 0 20px rgba(185,212,78,0.4);
 }
 
-.logo-box h2{
-font-size:28px;
+.cart-btn{
+margin-top:30px;
+padding:18px 35px;
+background:linear-gradient(135deg,#b9d44e,#d4ff5c);
+border:none;
+border-radius:15px;
+font-size:24px;
 font-weight:bold;
-letter-spacing:2px;
+cursor:pointer;
+box-shadow:0 0 25px #b9d44e;
+animation:pulse 2s infinite;
+transition:0.3s;
+}
+
+.cart-btn:hover{
+transform:scale(1.05);
+}
+
+.info-box{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+margin-top:50px;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:15px;
+border:1px solid #222;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#b9d44e;
+}
+
+.card h3{
+color:#b9d44e;
+margin-bottom:10px;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 10px #b9d44e;}
+50%{box-shadow:0 0 30px #b9d44e;}
+100%{box-shadow:0 0 10px #b9d44e;}
+}
+
+@media(max-width:768px){
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.left,.right{
+width:100%;
+}
+
+h1{
+font-size:50px;
+line-height:60px;
+}
+
+.main-shirt{
+max-width:320px;
+}
+
+.gallery{
+justify-content:center;
+}
+
+.info-box{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<div class="left">
+<div class="badge">✨ NEW ARRIVAL</div>
+
+<h1>BREAK <span>RULES</span></h1>
+
+<p class="tag">NOT YOUR LIMITS</p>
+
+<p class="desc">
+Crafted to make your outfit worthy. Built for the authentic.
+</p>
+
+<div class="price">
+₹799 <span>₹1299</span>
+</div>
+
+<div class="feature">✔ Premium Cotton</div>
+<div class="feature">✔ Bold Print</div>
+<div class="feature">✔ Oversized Fit</div>
+<div class="feature">✔ Fade Resistant</div>
+
+<button class="cart-btn">ADD TO CART</button>
+</div>
+
+<div class="right">
+<img id="mainImage" class="main-shirt" src="./front.png" alt="T-shirt">
+
+<div class="gallery">
+<img src="./front.png" onclick="changeImage('./front.png')">
+<img src="./back.png" onclick="changeImage('./back.png')">
+<img src="./main.png" onclick="changeImage('./main.png')">
+</div>
+</div>
+
+</div>
+
+<div class="info-box">
+<div class="card">
+<h3>Premium Quality</h3>
+<p>Soft, breathable and durable cotton.</p>
+</div>
+
+<div class="card">
+<h3>Streetwear Style</h3>
+<p>Perfect for modern fashion lovers.</p>
+</div>
+
+<div class="card">
+<h3>Cash On Delivery</h3>
+<p>Available all over India.</p>
+</div>
+
+<div class="card">
+<h3>7 Days Return</h3>
+<p>Easy returns and exchanges.</p>
+</div>
+</div>
+
+</div>
+
+<script>
+function changeImage(src){
+let img=document.getElementById("mainImage");
+img.style.opacity="0";
+
+setTimeout(()=>{
+img.src=src;
+img.style.opacity="1";
+},300);
+}
+
+let images=["./front.png","./back.png","./main.png"];
+let current=0;
+
+setInterval(()=>{
+current++;
+if(current>=images.length){
+current=0;
+}
+changeImage(images[current]);
+},3000);
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tervo Store</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#050505;
 color:white;
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:40px 0;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+min-height:100vh;
+gap:40px;
+}
+
+.left,.right{
+width:45%;
 }
 
 .badge{
@@ -205,10 +476,6 @@ text-align:center;
 width:100%;
 }
 
-.logo-box{
-justify-content:center;
-}
-
 h1{
 font-size:50px;
 line-height:60px;
@@ -235,12 +502,6 @@ grid-template-columns:1fr;
 <div class="hero">
 
 <div class="left">
-
-<div class="logo-box">
-<img src="./logo.png" alt="Tervo Logo">
-<h2>TERVO</h2>
-</div>
-
 <div class="badge">✨ NEW ARRIVAL</div>
 
 <h1>BREAK <span>RULES</span></h1>
@@ -261,11 +522,9 @@ Crafted to make your outfit worthy. Built for the authentic.
 <div class="feature">✔ Fade Resistant</div>
 
 <button class="cart-btn">ADD TO CART</button>
-
 </div>
 
 <div class="right">
-
 <img id="mainImage" class="main-shirt" src="./front.png" alt="T-shirt">
 
 <div class="gallery">
@@ -273,13 +532,11 @@ Crafted to make your outfit worthy. Built for the authentic.
 <img src="./back.png" onclick="changeImage('./back.png')">
 <img src="./main.png" onclick="changeImage('./main.png')">
 </div>
-
 </div>
 
 </div>
 
 <div class="info-box">
-
 <div class="card">
 <h3>Premium Quality</h3>
 <p>Soft, breathable and durable cotton.</p>
@@ -299,7 +556,6 @@ Crafted to make your outfit worthy. Built for the authentic.
 <h3>7 Days Return</h3>
 <p>Easy returns and exchanges.</p>
 </div>
-
 </div>
 
 </div>
