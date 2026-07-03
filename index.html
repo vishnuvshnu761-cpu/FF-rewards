@@ -75,9 +75,7 @@ line-height:70px;
 font-weight:900;
 }
 
-.green{
-color:#b9d44e;
-}
+.green{color:#b9d44e;}
 
 .tag{
 font-size:28px;
@@ -178,10 +176,6 @@ cursor:pointer;
 box-shadow:0 0 25px #b9d44e;
 margin:25px 0;
 transition:.3s;
-}
-
-.cart-btn:hover{
-transform:scale(1.03);
 }
 
 .desc{
@@ -291,8 +285,11 @@ font-size:16px;
 outline:none;
 }
 
-.input-box:focus{
-border-color:#b9d44e;
+.qty-box{
+display:flex;
+align-items:center;
+gap:12px;
+margin:20px 0;
 }
 </style>
 </head>
@@ -338,33 +335,8 @@ border-color:#b9d44e;
 
 <p class="desc">Make a statement. Break the mold. Built for those who don’t follow the rules.</p>
 
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Premium Cotton</h3><p>Soft breathable premium fabric</p></div></div>
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Bold Print</h3><p>High quality long lasting print</p></div></div>
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Oversized Fit</h3><p>Streetwear style fit</p></div></div>
-<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Fade Resistant</h3><p>Print stays fresh after wash</p></div></div>
-
-<div class="box">
-<h2>Product Highlights</h2>
-<div class="detail"><span>Fabric</span><span>Cotton Blend</span></div>
-<div class="detail"><span>Color</span><span>Green</span></div>
-<div class="detail"><span>Fit/Shape</span><span>Loose</span></div>
-<div class="detail"><span>Length</span><span>Regular</span></div>
-</div>
-
-<div class="box">
-<h2>Additional Details</h2>
-<div class="detail"><span>Neck</span><span>Round</span></div>
-<div class="detail"><span>Sleeve Length</span><span>Short Sleeves</span></div>
-<div class="detail"><span>Sleeve Styling</span><span>Regular</span></div>
-<div class="detail"><span>Pattern</span><span>Printed</span></div>
-<div class="detail"><span>Print Type</span><span>Back Print</span></div>
-<div class="detail"><span>Occasion</span><span>Casual</span></div>
-<div class="detail"><span>Country</span><span>India</span></div>
-</div>
-
 <div class="box">
 <h2>Customer Reviews</h2>
-
 <div class="rating-card">
 <h1>4.7 ★</h1>
 <p>2,556 ratings</p>
@@ -405,6 +377,13 @@ border-color:#b9d44e;
 <button class="size" onclick="selectCheckoutSize(this)">XXL</button>
 </div>
 
+<h3>Quantity</h3>
+<div class="qty-box">
+<button class="size" onclick="decreaseQty()">-</button>
+<div class="size" id="qtyBox">1</div>
+<button class="size" onclick="increaseQty()">+</button>
+</div>
+
 <input type="text" placeholder="Full Name" class="input-box">
 <input type="tel" placeholder="Phone Number" class="input-box">
 <input type="text" placeholder="Pincode" class="input-box">
@@ -419,8 +398,10 @@ border-color:#b9d44e;
 </div>
 
 <script>
+let quantity=1;
+
 function changeImage(src){
-document.getElementById("mainImage").src = src;
+document.getElementById("mainImage").src=src;
 }
 
 function selectSize(el){
@@ -432,9 +413,23 @@ el.classList.add('active');
 
 function selectCheckoutSize(el){
 document.querySelectorAll('#checkoutPage .size').forEach(btn=>{
+if(btn.innerText!=="+" && btn.innerText!=="-" && btn.id!=="qtyBox"){
 btn.classList.remove('active');
+}
 });
 el.classList.add('active');
+}
+
+function increaseQty(){
+quantity++;
+document.getElementById("qtyBox").innerText=quantity;
+}
+
+function decreaseQty(){
+if(quantity>1){
+quantity--;
+document.getElementById("qtyBox").innerText=quantity;
+}
 }
 
 function showCheckout(){
@@ -449,8 +444,8 @@ let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 let message =
 "🛒 New Order%0A%0A"+
 "👕 Size: "+selectedSize+"%0A"+
-"👤 Name: "+inputs[0].value+"%0A"+
 "📦 Quantity: "+quantity+"%0A"+
+"👤 Name: "+inputs[0].value+"%0A"+
 "📞 Phone: "+inputs[1].value+"%0A"+
 "📍 Pincode: "+inputs[2].value+"%0A"+
 "🏠 House: "+inputs[3].value+"%0A"+
