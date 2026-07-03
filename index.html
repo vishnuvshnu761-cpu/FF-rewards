@@ -12,6 +12,8 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 -webkit-tap-highlight-color:transparent;
+-webkit-touch-callout:none;
+-webkit-user-select:none;
 user-select:none;
 }
 
@@ -87,21 +89,6 @@ font-weight:bold;
 margin:20px 0;
 }
 
-.stock-alert{
-color:#ff4d4d;
-font-size:18px;
-font-weight:bold;
-text-align:center;
-margin:15px 0;
-animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:1;}
-50%{opacity:.5;}
-100%{opacity:1;}
-}
-
 .main-shirt{
 width:100%;
 max-width:500px;
@@ -166,6 +153,7 @@ text-align:center;
 .price-box h2{
 font-size:42px;
 color:#b9d44e;
+font-weight:bold;
 }
 
 .price-box span{
@@ -173,6 +161,13 @@ font-size:24px;
 color:#777;
 text-decoration:line-through;
 margin-left:10px;
+}
+
+.price-box p{
+color:#ffcc00;
+margin-top:8px;
+font-size:16px;
+font-weight:bold;
 }
 
 .cart-btn{
@@ -186,14 +181,11 @@ border-radius:18px;
 cursor:pointer;
 box-shadow:0 0 25px #b9d44e;
 margin:25px 0;
+transition:.3s;
 }
 
-.trust-box,.box,.testimonial{
-background:#111;
-padding:18px;
-border-radius:15px;
-margin:20px 0;
-border:1px solid #222;
+.cart-btn:hover{
+transform:scale(1.03);
 }
 
 .desc{
@@ -215,6 +207,24 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 .feature-icon{
 font-size:28px;
 color:#b9d44e;
+}
+
+.feature-text h3{
+font-size:20px;
+}
+
+.feature-text p{
+color:#999;
+font-size:15px;
+margin-top:5px;
+}
+
+.box{
+background:linear-gradient(180deg,#111,#0b0f08);
+padding:20px;
+border-radius:20px;
+margin-top:30px;
+border:1px solid rgba(255,255,255,0.06);
 }
 
 .box h2{
@@ -255,6 +265,24 @@ margin-bottom:25px;
 color:black;
 }
 
+.rating-card h1{
+font-size:70px;
+line-height:70px;
+}
+
+.rating-card p{
+margin-top:10px;
+font-size:22px;
+}
+
+.testimonial{
+background:#111;
+padding:15px;
+border-radius:15px;
+margin:15px 0;
+border:1px solid #222;
+}
+
 .input-box{
 width:100%;
 padding:16px;
@@ -263,37 +291,12 @@ border-radius:12px;
 border:1px solid #333;
 background:#0f0f0f;
 color:white;
+font-size:16px;
+outline:none;
 }
 
-#checkoutPage{
-display:none;
-opacity:0;
-transform:translateY(50px);
-transition:.4s ease;
-}
-
-#checkoutPage.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.success-popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-}
-
-.checkmark{
-font-size:80px;
-color:#b9d44e;
+.input-box:focus{
+border-color:#b9d44e;
 }
 </style>
 </head>
@@ -310,6 +313,7 @@ color:#b9d44e;
 <div class="container">
 
 <div class="badge">⚡ NEW ARRIVAL</div>
+
 <h1>BREAK YOUR <br><span class="green">RULES</span></h1>
 <p class="tag">NOT YOUR LIMITS</p>
 
@@ -331,17 +335,17 @@ color:#b9d44e;
 
 <div class="price-box">
 <h2>₹599 <span>₹999</span></h2>
+<p>🔥 Limited Offer</p>
 </div>
 
 <button class="cart-btn" onclick="showCheckout()">ADD TO CART</button>
 
-<div class="trust-box">
-<div>✔ 7 Days Replacement</div>
-<div>✔ Secure Checkout</div>
-<div>✔ Cash On Delivery Available</div>
-</div>
-
 <p class="desc">Make a statement. Break the mold. Built for those who don’t follow the rules.</p>
+
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Premium Cotton</h3><p>Soft breathable premium fabric</p></div></div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Bold Print</h3><p>High quality long lasting print</p></div></div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Oversized Fit</h3><p>Streetwear style fit</p></div></div>
+<div class="feature"><div class="feature-icon">✔</div><div class="feature-text"><h3>Fade Resistant</h3><p>Print stays fresh after wash</p></div></div>
 
 <div class="box">
 <h2>Product Highlights</h2>
@@ -378,14 +382,13 @@ color:#b9d44e;
 <div class="box">
 <h2>Customer Testimonials</h2>
 <div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Amazing quality and perfect oversized fit.</div>
-<div class="testimonial">⭐️⭐️⭐️⭐️ Premium print quality.</div>
-<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Worth every rupee.</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️ Print quality is premium and looks stylish.</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ Worth the price. Fast delivery and nice fabric.</div>
 </div>
 
-<div id="checkoutPage" class="box">
+<div id="checkoutPage" class="box" style="display:none;">
 <h2>Checkout Details</h2>
 
-<h3>Select Size</h3>
 <div class="size-box">
 <button class="size active" onclick="selectCheckoutSize(this)">S</button>
 <button class="size" onclick="selectCheckoutSize(this)">M</button>
@@ -414,77 +417,82 @@ color:#b9d44e;
 
 </div>
 
-<div class="success-popup" id="successPopup">
-<div class="checkmark">✔</div>
-<h2>Order Confirmed!</h2>
-<p>Your order has been placed successfully.</p>
-</div>
-
 <script>
 let quantity = 1;
 
 function changeImage(src){
-document.getElementById("mainImage").src=src;
+document.getElementById("mainImage").src = src;
 }
 
 function selectSize(el){
-document.querySelectorAll(".container > .size-box .size").forEach(btn=>{
-btn.classList.remove("active");
+document.querySelectorAll('.container > .size-box .size').forEach(btn=>{
+btn.classList.remove('active');
 });
-el.classList.add("active");
+el.classList.add('active');
 }
 
 function selectCheckoutSize(el){
-document.querySelectorAll("#checkoutPage .size-box .size").forEach(btn=>{
-if(btn.innerText!=="+" && btn.innerText!=="-" && btn.id!=="qtyBox"){
-btn.classList.remove("active");
+document.querySelectorAll('#checkoutPage .size').forEach(btn=>{
+if(btn.id !== "qtyBox" && btn.innerText !== "+" && btn.innerText !== "-"){
+btn.classList.remove('active');
 }
 });
-el.classList.add("active");
+el.classList.add('active');
 }
 
 function increaseQty(){
 quantity++;
-document.getElementById("qtyBox").innerText=quantity;
+document.getElementById("qtyBox").innerText = quantity;
 }
 
 function decreaseQty(){
-if(quantity>1){
+if(quantity > 1){
 quantity--;
-document.getElementById("qtyBox").innerText=quantity;
+document.getElementById("qtyBox").innerText = quantity;
 }
 }
 
 function showCheckout(){
-let checkout=document.getElementById("checkoutPage");
-checkout.style.display="block";
-
-setTimeout(()=>{
-checkout.classList.add("show");
-checkout.scrollIntoView({behavior:"smooth"});
-},100);
+document.getElementById("checkoutPage").style.display="block";
+document.getElementById("checkoutPage").scrollIntoView({behavior:"smooth"});
 }
 
 function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
-let size=document.querySelector("#checkoutPage .size.active").innerText;
+let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 
-let message=
-"🛒 New Order%0A"+
-"👕 Size: "+size+
-"%0A📦 Quantity: "+quantity+
-"%0A👤 Name: "+inputs[0].value+
-"%0A📞 Phone: "+inputs[1].value+
-"%0A📍 Pincode: "+inputs[2].value+
-"%0A🏠 House: "+inputs[3].value+
-"%0A📌 Address: "+inputs[4].value+
-"%0A🏙 City: "+inputs[5].value+
-"%0A🌍 State: "+inputs[6].value;
+for(let i=0;i<inputs.length;i++){
+if(inputs[i].value.trim()===""){
+alert("⚠ Please fill all fields");
+return;
+}
+}
+
+if(!/^[6-9]\d{9}$/.test(inputs[1].value.trim())){
+alert("⚠ Enter valid phone number");
+return;
+}
+
+if(!/^\d{6}$/.test(inputs[2].value.trim())){
+alert("⚠ Enter valid pincode");
+return;
+}
+
+let message =
+"🛒 New Order%0A%0A"+
+"👕 Size: "+selectedSize+"%0A"+
+"📦 Quantity: "+quantity+"%0A"+
+"👤 Name: "+inputs[0].value+"%0A"+
+"📞 Phone: "+inputs[1].value+"%0A"+
+"📍 Pincode: "+inputs[2].value+"%0A"+
+"🏠 House: "+inputs[3].value+"%0A"+
+"📌 Address: "+inputs[4].value+"%0A"+
+"🏙 City: "+inputs[5].value+"%0A"+
+"🌍 State: "+inputs[6].value;
 
 fetch("https://api.telegram.org/botYOURTOKEN/sendMessage?chat_id=YOURCHATID&text="+message)
-.then(()=>{
-document.getElementById("successPopup").style.display="flex";
-});
+.then(()=>alert("✅ Order placed successfully!"))
+.catch(()=>alert("❌ Failed to place order"));
 }
 </script>
 
