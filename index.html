@@ -88,6 +88,32 @@ font-weight:bold;
 margin:20px 0;
 }
 
+.size-box{
+display:flex;
+gap:12px;
+margin:25px 0;
+flex-wrap:wrap;
+}
+
+.size{
+width:60px;
+height:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+border:2px solid #b9d44e;
+border-radius:12px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.size:hover{
+background:#b9d44e;
+color:black;
+}
+
 .desc{
 font-size:20px;
 color:#aaa;
@@ -117,32 +143,6 @@ font-size:20px;
 color:#999;
 font-size:15px;
 margin-top:5px;
-}
-
-.size-box{
-display:flex;
-gap:12px;
-margin:30px 0;
-flex-wrap:wrap;
-}
-
-.size{
-width:60px;
-height:60px;
-display:flex;
-justify-content:center;
-align-items:center;
-border:2px solid #b9d44e;
-border-radius:12px;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-.size:hover{
-background:#b9d44e;
-color:black;
 }
 
 .cart-btn{
@@ -217,10 +217,10 @@ justify-content:center;
 <div class="container">
 <div class="hero">
 
-<!-- TOP PRODUCT IMAGE -->
+<!-- PRODUCT IMAGE -->
 <img id="mainImage" class="main-shirt" src="back.png">
 
-<!-- TOP GALLERY -->
+<!-- GALLERY -->
 <div class="gallery">
 <img src="front.png" onclick="changeImage('front.png')">
 <img src="back.png" onclick="changeImage('back.png')">
@@ -236,6 +236,16 @@ BREAK <br>
 
 <p class="tag">NOT YOUR LIMITS</p>
 
+<!-- SIZE ABOVE DESCRIPTION -->
+<div class="size-box">
+<div class="size">S</div>
+<div class="size">M</div>
+<div class="size">L</div>
+<div class="size">XL</div>
+<div class="size">XXL</div>
+</div>
+
+<!-- DESCRIPTION -->
 <p class="desc">
 Make a statement. Break the mold. Built for those who don’t follow the rules.
 </p>
@@ -270,14 +280,6 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <h3>Fade Resistant</h3>
 <p>Print stays fresh after wash</p>
 </div>
-</div>
-
-<div class="size-box">
-<div class="size">S</div>
-<div class="size">M</div>
-<div class="size">L</div>
-<div class="size">XL</div>
-<div class="size">XXL</div>
 </div>
 
 <button class="cart-btn">ADD TO CART</button>
