@@ -20,7 +20,7 @@ color:white;
 
 .container{
 width:90%;
-max-width:750px;
+max-width:700px;
 margin:auto;
 padding:30px 0;
 }
@@ -143,68 +143,50 @@ font-size:15px;
 margin-top:5px;
 }
 
-.details-box,.testimonial-box{
-margin-top:40px;
-padding:25px;
+.box{
 background:#111;
+padding:20px;
 border-radius:20px;
+margin-top:30px;
 border:1px solid #222;
 }
 
-.details-box h2,.testimonial-box h2{
+.box h2{
 color:#b9d44e;
 margin-bottom:20px;
 }
 
-.detail-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
+.detail{
+display:flex;
+justify-content:space-between;
+margin:12px 0;
+color:#ccc;
 }
 
-.detail-grid span{
-color:#888;
-font-size:14px;
-}
-
-.detail-grid p{
-font-size:18px;
-font-weight:bold;
-margin-top:5px;
-}
-
-.rating-card{
-background:#0f8f5d;
-padding:20px;
-border-radius:20px;
-text-align:center;
-margin-bottom:25px;
-}
-
-.rating-card h1{
-font-size:50px;
-}
-
-.rating-card p{
-margin-top:10px;
-}
-
-.review-bars div{
+.review{
 margin:15px 0;
 }
 
 .bar{
 width:100%;
-height:10px;
+height:8px;
 background:#222;
 border-radius:10px;
-margin-top:8px;
 overflow:hidden;
+margin-top:8px;
 }
 
-.bar div{
+.fill{
 height:100%;
 background:#b9d44e;
+}
+
+.testimonial{
+background:#111;
+padding:15px;
+border-radius:15px;
+margin:15px 0;
+border:1px solid #222;
 }
 
 @media(max-width:768px){
@@ -219,10 +201,6 @@ width:75px;
 
 .desc{
 font-size:18px;
-}
-
-.detail-grid{
-grid-template-columns:1fr;
 }
 }
 </style>
@@ -294,58 +272,74 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 </div>
 </div>
 
-<div class="details-box">
+<!-- PRODUCT HIGHLIGHTS -->
+<div class="box">
 <h2>Product Highlights</h2>
 
-<div class="detail-grid">
-<div><span>Fabric</span><p>Cotton Blend</p></div>
-<div><span>Color</span><p>Green</p></div>
-<div><span>Fit/Shape</span><p>Loose</p></div>
-<div><span>Length</span><p>Regular</p></div>
-<div><span>Neck</span><p>Round</p></div>
-<div><span>Sleeve Length</span><p>Short Sleeves</p></div>
-<div><span>Sleeve Styling</span><p>Regular</p></div>
-<div><span>Pattern</span><p>Printed</p></div>
-<div><span>Print Type</span><p>Back Print</p></div>
-<div><span>Occasion</span><p>Casual</p></div>
-<div><span>Country</span><p>India</p></div>
-</div>
+<div class="detail"><span>Fabric</span><span>Cotton Blend</span></div>
+<div class="detail"><span>Color</span><span>Green</span></div>
+<div class="detail"><span>Fit/Shape</span><span>Loose</span></div>
+<div class="detail"><span>Length</span><span>Regular</span></div>
+
 </div>
 
-<div class="testimonial-box">
-<h2>Customer Reviews</h2>
+<!-- ADDITIONAL DETAILS -->
+<div class="box">
+<h2>Additional Details</h2>
 
-<div class="rating-card">
-<h1>4.1 ★</h1>
-<p>2,556 ratings</p>
-<p>824 reviews</p>
+<div class="detail"><span>Neck</span><span>Round</span></div>
+<div class="detail"><span>Sleeve Length</span><span>Short Sleeves</span></div>
+<div class="detail"><span>Sleeve Styling</span><span>Regular</span></div>
+<div class="detail"><span>Pattern</span><span>Printed</span></div>
+<div class="detail"><span>Print Type</span><span>Back Print</span></div>
+<div class="detail"><span>Occasion</span><span>Casual</span></div>
+<div class="detail"><span>Country</span><span>India</span></div>
+
 </div>
 
-<div class="review-bars">
-<div>
-<span>Very Good</span>
-<div class="bar"><div style="width:75%"></div></div>
+<!-- RATINGS -->
+<div class="box">
+<h2>Customer Ratings</h2>
+
+<div class="review">
+Very Good
+<div class="bar"><div class="fill" style="width:75%"></div></div>
 </div>
 
-<div>
-<span>Good</span>
-<div class="bar"><div style="width:45%"></div></div>
+<div class="review">
+Good
+<div class="bar"><div class="fill" style="width:45%"></div></div>
 </div>
 
-<div>
-<span>Ok-Ok</span>
-<div class="bar"><div style="width:25%"></div></div>
+<div class="review">
+Ok-Ok
+<div class="bar"><div class="fill" style="width:25%"></div></div>
 </div>
 
-<div>
-<span>Bad</span>
-<div class="bar"><div style="width:15%"></div></div>
+<div class="review">
+Bad
+<div class="bar"><div class="fill" style="width:15%"></div></div>
 </div>
 
-<div>
-<span>Very Bad</span>
-<div class="bar"><div style="width:20%"></div></div>
 </div>
+
+<!-- TESTIMONIALS -->
+<div class="box">
+<h2>Customer Testimonials</h2>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+Amazing quality and perfect oversized fit.
+</div>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️  
+Print quality is premium and looks stylish.
+</div>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+Worth the price. Fast delivery and nice fabric.
 </div>
 
 </div>
