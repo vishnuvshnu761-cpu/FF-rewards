@@ -3,113 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top Up Center</title>
-
+<title>Tervo Store</title>
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 body{
-    background:#f4f4f4;
+    background:#111;
+    color:white;
 }
 header{
-    background:#fff;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    text-align:center;
+    padding:20px;
+    background:#000;
+    border-bottom:1px solid #333;
 }
-.logo{
-    font-size:22px;
-    font-weight:bold;
+header h1{
+    font-size:32px;
+}
+header p{
+    color:#aaa;
 }
 .container{
-    padding:20px;
+    width:90%;
+    margin:auto;
+    padding:20px 0;
 }
-.verify-box{
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    margin-bottom:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-.verify-box input{
-    width:100%;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    margin-top:10px;
-}
-.verify-box button{
-    width:100%;
-    padding:14px;
-    margin-top:10px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(90deg,#ff5f6d,#ffc371);
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-.title{
-    text-align:center;
-    margin:20px 0;
-}
-.packages{
+.products{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 .card{
-    background:white;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    transition:.3s;
+    background:#1a1a1a;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(255,255,255,0.1);
 }
-.card:hover{
-    transform:translateY(-5px);
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+.card-content{
+    padding:15px;
 }
 .card h2{
-    color:#ff6a00;
-}
-.card p{
-    margin:8px 0;
+    font-size:20px;
+    margin-bottom:10px;
 }
 .price{
-    font-size:24px;
-    font-weight:bold;
+    color:#00ff99;
+    font-size:18px;
+    margin-bottom:10px;
+}
+select{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
 }
 .buy-btn{
-    width:100%;
+    display:block;
+    text-align:center;
     padding:12px;
-    border:none;
-    border-radius:12px;
-    background:#ff6a00;
-    color:white;
-    cursor:pointer;
-    margin-top:10px;
+    background:#00ff99;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
 }
 footer{
-    margin-top:40px;
     text-align:center;
     padding:20px;
-    color:gray;
+    color:#777;
 }
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">🔥 Top Up Center</div>
-    <div>☰</div>
+    <h1>Tervo Store</h1>
+    <p>Crafted to make your outfit worthy ✨</p>
 </header>
 
 <div class="container">
+    <div class="products">
+
+        <div class="card">
+            <img src="shirt1.jpg" alt="T-shirt 1">
+            <div class="card-content">
+                <h2>Oversized Black Tee</h2>
+                <p class="price">₹599</p>
+                <select>
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <a class="buy-btn" href="https://wa.me/919999999999?text=I want to order Oversized Black Tee">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="shirt2.jpg" alt="T-shirt 2">
+            <div class="card-content">
+                <h2>Anime Graphic Tee</h2>
+                <p class="price">₹699</p>
+                <select>
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <a class="buy-btn" href="https://wa.me/919999999999?text=I want to order Anime Graphic Tee">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Tervo Store. All rights reserved.
+</footer>
+
+</body>
+</html><div class="container">
 
     <div class="verify-box">
         <h3>Enter Free Fire UID</h3>
