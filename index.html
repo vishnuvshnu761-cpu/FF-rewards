@@ -25,35 +25,35 @@ linear-gradient(180deg,#050505 0%, #0a0f05 40%, #111707 100%);
 color:white;
 }
 
-/* RUNNING BAR */
+/* TOP RUNNING STRIP */
 .top-strip{
 width:100%;
 background:#111;
 overflow:hidden;
-padding:10px 0;
+padding:8px 0;
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .top-strip-content{
 display:flex;
 width:max-content;
-animation:scrollText 10s linear infinite;
+animation:run 10s linear infinite;
 }
 
 .top-strip-content span{
+color:#b9d44e;
 font-size:14px;
 font-weight:bold;
-color:#b9d44e;
 white-space:nowrap;
-padding-right:60px;
+padding-right:50px;
 }
 
-@keyframes scrollText{
+@keyframes run{
 0%{
-transform:translateX(0);
+transform:translateX(100%);
 }
 100%{
-transform:translateX(-50%);
+transform:translateX(-100%);
 }
 }
 
@@ -308,7 +308,6 @@ border-color:#b9d44e;
 <span>🚚 Cash on Delivery • Free Shipping</span>
 <span>🚚 Cash on Delivery • Free Shipping</span>
 <span>🚚 Cash on Delivery • Free Shipping</span>
-<span>🚚 Cash on Delivery • Free Shipping</span>
 </div>
 </div>
 
@@ -376,15 +375,27 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 
 <div class="box">
 <h2>Customer Reviews</h2>
+
 <div class="rating-card">
 <h1>4.7 ★</h1>
 <p>2,556 ratings</p>
 <p>824 reviews</p>
 </div>
 
-<div class="review"><p>Very Good</p><div class="bar"><div class="fill" style="width:89%;background:#00c853;"></div></div></div>
-<div class="review"><p>Good</p><div class="bar"><div class="fill" style="width:20%;background:#4caf50;"></div></div></div>
-<div class="review"><p>Ok-Ok</p><div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div></div>
+<div class="review">
+<p>Very Good</p>
+<div class="bar"><div class="fill" style="width:89%;background:#00c853;"></div></div>
+</div>
+
+<div class="review">
+<p>Good</p>
+<div class="bar"><div class="fill" style="width:20%;background:#4caf50;"></div></div>
+</div>
+
+<div class="review">
+<p>Ok-Ok</p>
+<div class="bar"><div class="fill" style="width:2%;background:#ffc107;"></div></div>
+</div>
 </div>
 
 <div class="box">
