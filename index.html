@@ -469,6 +469,23 @@ function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
 let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 
+for(let i=0;i<inputs.length;i++){
+if(inputs[i].value.trim()===""){
+alert("⚠ Please fill all fields");
+return;
+}
+}
+
+if(inputs[1].value.length < 10){
+alert("⚠ Enter valid phone number");
+return;
+}
+
+if(inputs[2].value.length < 6){
+alert("⚠ Enter valid pincode");
+return;
+}
+
 let message =
 "🛒 New Order%0A%0A"+
 "👕 Size: "+selectedSize+"%0A"+
