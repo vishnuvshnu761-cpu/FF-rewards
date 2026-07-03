@@ -387,6 +387,15 @@ color:#b9d44e;
 <div id="checkoutPage" class="box">
 <h2>Checkout Details</h2>
 
+<h3>Select Size</h3>
+<div class="size-box">
+<button class="size active" onclick="selectCheckoutSize(this)">S</button>
+<button class="size" onclick="selectCheckoutSize(this)">M</button>
+<button class="size" onclick="selectCheckoutSize(this)">L</button>
+<button class="size" onclick="selectCheckoutSize(this)">XL</button>
+<button class="size" onclick="selectCheckoutSize(this)">XXL</button>
+</div>
+
 <h3>Quantity</h3>
 <div class="size-box">
 <button class="size" onclick="decreaseQty()">-</button>
@@ -421,8 +430,15 @@ document.getElementById("mainImage").src=src;
 }
 
 function selectSize(el){
-document.querySelectorAll(".size").forEach(btn=>{
-if(btn.innerText !== "+" && btn.innerText !== "-" && btn.id !== "qtyBox"){
+document.querySelectorAll(".container > .size-box .size").forEach(btn=>{
+btn.classList.remove("active");
+});
+el.classList.add("active");
+}
+
+function selectCheckoutSize(el){
+document.querySelectorAll("#checkoutPage .size-box .size").forEach(btn=>{
+if(btn.innerText!=="+" && btn.innerText!=="-" && btn.id!=="qtyBox"){
 btn.classList.remove("active");
 }
 });
@@ -447,15 +463,13 @@ checkout.style.display="block";
 
 setTimeout(()=>{
 checkout.classList.add("show");
-checkout.scrollIntoView({
-behavior:"smooth"
-});
+checkout.scrollIntoView({behavior:"smooth"});
 },100);
 }
 
 function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
-let size=document.querySelector(".size.active").innerText;
+let size=document.querySelector("#checkoutPage .size.active").innerText;
 
 let message=
 "🛒 New Order%0A"+
