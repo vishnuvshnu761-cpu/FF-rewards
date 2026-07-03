@@ -25,18 +25,8 @@ padding:30px 0;
 }
 
 .hero{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:40px;
-}
-
-.left{
-width:40%;
-}
-
-.right{
-width:60%;
+max-width:700px;
+margin:auto;
 }
 
 .badge{
@@ -50,8 +40,8 @@ font-weight:bold;
 }
 
 h1{
-font-size:90px;
-line-height:85px;
+font-size:70px;
+line-height:70px;
 font-weight:900;
 }
 
@@ -65,8 +55,36 @@ font-weight:bold;
 margin:20px 0;
 }
 
+.main-shirt{
+width:100%;
+max-width:500px;
+display:block;
+margin:30px auto;
+border-radius:20px;
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-bottom:30px;
+}
+
+.gallery img{
+width:100px;
+border-radius:15px;
+cursor:pointer;
+border:2px solid transparent;
+transition:.3s;
+}
+
+.gallery img:hover{
+border-color:#b9d44e;
+transform:scale(1.05);
+}
+
 .desc{
-font-size:22px;
+font-size:20px;
 color:#aaa;
 line-height:1.6;
 margin-bottom:30px;
@@ -100,6 +118,7 @@ margin-top:5px;
 display:flex;
 gap:12px;
 margin:30px 0;
+flex-wrap:wrap;
 }
 
 .size{
@@ -140,35 +159,12 @@ justify-content:space-between;
 margin-top:30px;
 font-size:18px;
 color:#ccc;
-}
-
-.main-shirt{
-width:100%;
-max-width:650px;
-border-radius:20px;
-}
-
-.gallery{
-display:flex;
-gap:20px;
-margin-top:20px;
-}
-
-.gallery img{
-width:130px;
-border-radius:15px;
-cursor:pointer;
-border:2px solid transparent;
-transition:.3s;
-}
-
-.gallery img:hover{
-border-color:#b9d44e;
-transform:scale(1.05);
+flex-wrap:wrap;
+gap:15px;
 }
 
 .benefits{
-margin-top:30px;
+margin-top:40px;
 padding:25px;
 background:#111;
 border-radius:20px;
@@ -187,16 +183,9 @@ color:#ccc;
 }
 
 @media(max-width:768px){
-.hero{
-flex-direction:column;
-}
-
-.left,.right{
-width:100%;
-}
 
 h1{
-font-size:55px;
+font-size:50px;
 line-height:55px;
 }
 
@@ -205,11 +194,15 @@ max-width:100%;
 }
 
 .gallery img{
-width:90px;
+width:80px;
 }
 
 .desc{
 font-size:18px;
+}
+
+.bottom-icons{
+justify-content:center;
 }
 }
 </style>
@@ -217,10 +210,7 @@ font-size:18px;
 <body>
 
 <div class="container">
-
 <div class="hero">
-
-<div class="left">
 
 <div class="badge">⚡ NEW ARRIVAL</div>
 
@@ -230,6 +220,16 @@ BREAK <br>
 </h1>
 
 <p class="tag">NOT YOUR LIMITS</p>
+
+<!-- PRODUCT IMAGE BELOW TITLE -->
+<img id="mainImage" class="main-shirt" src="back.png">
+
+<!-- GALLERY -->
+<div class="gallery">
+<img src="front.png" onclick="changeImage('front.png')">
+<img src="back.png" onclick="changeImage('back.png')">
+<img src="main.png" onclick="changeImage('main.png')">
+</div>
 
 <p class="desc">
 Make a statement. Break the mold. Built for those who don’t follow the rules.
@@ -283,18 +283,6 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 <span>⭐ Premium</span>
 </div>
 
-</div>
-
-<div class="right">
-
-<img id="mainImage" class="main-shirt" src="back.png">
-
-<div class="gallery">
-<img src="front.png" onclick="changeImage('front.png')">
-<img src="back.png" onclick="changeImage('back.png')">
-<img src="main.png" onclick="changeImage('main.png')">
-</div>
-
 <div class="benefits">
 <h2>WHY YOU’LL LOVE IT</h2>
 <p>✔ Unique trendy design</p>
@@ -304,9 +292,6 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 </div>
 
 </div>
-
-</div>
-
 </div>
 
 <script>
