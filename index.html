@@ -20,46 +20,9 @@ color:white;
 
 .container{
 width:90%;
-margin:auto;
-padding:30px 0;
-}
-
-.hero{
 max-width:700px;
 margin:auto;
-}
-
-.main-shirt{
-width:100%;
-max-width:500px;
-display:block;
-margin:20px auto;
-border-radius:20px;
-transition:.3s;
-}
-
-.main-shirt:hover{
-transform:scale(1.03);
-}
-
-.gallery{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-bottom:30px;
-}
-
-.gallery img{
-width:90px;
-border-radius:15px;
-cursor:pointer;
-border:2px solid transparent;
-transition:.3s;
-}
-
-.gallery img:hover{
-border-color:#b9d44e;
-transform:scale(1.05);
+padding:30px 0;
 }
 
 .badge{
@@ -68,7 +31,7 @@ padding:10px 18px;
 border:1px solid #b9d44e;
 border-radius:30px;
 color:#b9d44e;
-margin-bottom:25px;
+margin-bottom:20px;
 font-weight:bold;
 }
 
@@ -86,6 +49,34 @@ color:#b9d44e;
 font-size:28px;
 font-weight:bold;
 margin:20px 0;
+}
+
+.main-shirt{
+width:100%;
+max-width:500px;
+display:block;
+margin:25px auto;
+border-radius:20px;
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:25px;
+}
+
+.gallery img{
+width:90px;
+border-radius:15px;
+cursor:pointer;
+border:2px solid transparent;
+transition:.3s;
+}
+
+.gallery img:hover{
+border-color:#b9d44e;
+transform:scale(1.05);
 }
 
 .size-box{
@@ -106,12 +97,19 @@ border-radius:12px;
 font-size:20px;
 font-weight:bold;
 cursor:pointer;
-transition:.3s;
 }
 
-.size:hover{
-background:#b9d44e;
-color:black;
+.cart-btn{
+width:100%;
+padding:20px;
+font-size:26px;
+font-weight:bold;
+background:linear-gradient(135deg,#b9d44e,#d4ff5c);
+border:none;
+border-radius:18px;
+cursor:pointer;
+box-shadow:0 0 25px #b9d44e;
+margin:25px 0;
 }
 
 .desc{
@@ -125,7 +123,7 @@ margin-bottom:30px;
 display:flex;
 align-items:center;
 gap:15px;
-margin:25px 0;
+margin:20px 0;
 padding-bottom:15px;
 border-bottom:1px solid #222;
 }
@@ -145,69 +143,18 @@ font-size:15px;
 margin-top:5px;
 }
 
-.cart-btn{
-width:100%;
-padding:22px;
-font-size:28px;
-font-weight:bold;
-background:linear-gradient(135deg,#b9d44e,#d4ff5c);
-border:none;
-border-radius:18px;
-cursor:pointer;
-box-shadow:0 0 30px #b9d44e;
-margin-top:25px;
-}
-
-.bottom-icons{
-display:flex;
-justify-content:space-between;
-margin-top:30px;
-font-size:18px;
-color:#ccc;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.benefits{
-margin-top:40px;
-padding:25px;
-background:#111;
-border-radius:20px;
-border:1px solid #222;
-}
-
-.benefits h2{
-color:#b9d44e;
-margin-bottom:20px;
-}
-
-.benefits p{
-margin:12px 0;
-font-size:18px;
-color:#ccc;
-}
-
 @media(max-width:768px){
-
 h1{
 font-size:50px;
 line-height:55px;
 }
 
-.main-shirt{
-max-width:100%;
-}
-
 .gallery img{
-width:80px;
+width:75px;
 }
 
 .desc{
 font-size:18px;
-}
-
-.bottom-icons{
-justify-content:center;
 }
 }
 </style>
@@ -215,9 +162,20 @@ justify-content:center;
 <body>
 
 <div class="container">
-<div class="hero">
 
-<!-- PRODUCT IMAGE -->
+<!-- NEW ARRIVAL -->
+<div class="badge">⚡ NEW ARRIVAL</div>
+
+<!-- BREAK YOUR RULES -->
+<h1>
+BREAK YOUR <br>
+<span class="green">RULES</span>
+</h1>
+
+<!-- NOT YOUR LIMITS -->
+<p class="tag">NOT YOUR LIMITS</p>
+
+<!-- IMAGES -->
 <img id="mainImage" class="main-shirt" src="back.png">
 
 <!-- GALLERY -->
@@ -227,16 +185,7 @@ justify-content:center;
 <img src="main.png" onclick="changeImage('main.png')">
 </div>
 
-<div class="badge">⚡ NEW ARRIVAL</div>
-
-<h1>
-BREAK <br>
-<span class="green">RULES</span>
-</h1>
-
-<p class="tag">NOT YOUR LIMITS</p>
-
-<!-- SIZE ABOVE DESCRIPTION -->
+<!-- SIZES -->
 <div class="size-box">
 <div class="size">S</div>
 <div class="size">M</div>
@@ -245,11 +194,15 @@ BREAK <br>
 <div class="size">XXL</div>
 </div>
 
+<!-- ADD TO CART -->
+<button class="cart-btn">ADD TO CART</button>
+
 <!-- DESCRIPTION -->
 <p class="desc">
 Make a statement. Break the mold. Built for those who don’t follow the rules.
 </p>
 
+<!-- FEATURES -->
 <div class="feature">
 <div class="feature-icon">✔</div>
 <div class="feature-text">
@@ -282,23 +235,6 @@ Make a statement. Break the mold. Built for those who don’t follow the rules.
 </div>
 </div>
 
-<button class="cart-btn">ADD TO CART</button>
-
-<div class="bottom-icons">
-<span>🚚 COD</span>
-<span>↩ 7 Days Return</span>
-<span>⭐ Premium</span>
-</div>
-
-<div class="benefits">
-<h2>WHY YOU’LL LOVE IT</h2>
-<p>✔ Unique trendy design</p>
-<p>✔ Perfect for streetwear lovers</p>
-<p>✔ Unisex style</p>
-<p>✔ Easy to pair with anything</p>
-</div>
-
-</div>
 </div>
 
 <script>
