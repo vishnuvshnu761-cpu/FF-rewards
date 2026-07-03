@@ -266,16 +266,6 @@ background:#0f0f0f;
 color:white;
 font-size:16px;
 }
-
-.success-screen{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background:black;
-text-align:center;
-}
 </style>
 </head>
 <body>
@@ -444,7 +434,7 @@ function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
 let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 
-let message=
+let message =
 "🛒 New Order%0A%0A"+
 "👕 Size: "+selectedSize+"%0A"+
 "📦 Quantity: "+quantity+"%0A"+
@@ -459,10 +449,20 @@ let message=
 fetch("https://api.telegram.org/bot8960241914:AAGHaK_owYOUHLFfbSsMyHkX7pDowIeW85U/sendMessage?chat_id=1318634457&text="+message)
 .then(()=>{
 document.body.innerHTML=`
-<div class="success-screen">
-<h1 style="color:#b9d44e;">✅ Order Confirmed</h1>
-<p style="margin-top:20px;color:white;">Thank you for shopping with Tervo Store</p>
-</div>`;
+<div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:black;text-align:center;">
+<h1 style="font-size:60px;color:#b9d44e;animation:pop 0.8s ease;">✅</h1>
+<h2 style="margin-top:20px;color:#b9d44e;">Order Confirmed</h2>
+<p style="margin-top:15px;color:white;">Thank you for shopping with Tervo Store</p>
+</div>
+
+<style>
+@keyframes pop{
+0%{transform:scale(0);}
+70%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+</style>
+`;
 })
 .catch(()=>alert("❌ Failed to place order"));
 }
