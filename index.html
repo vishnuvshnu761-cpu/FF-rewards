@@ -259,57 +259,6 @@ color:white;
 border-color:#b9d44e;
 outline:none;
 }
-
-.success-popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.92);
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-}
-
-.success-circle{
-width:130px;
-height:130px;
-border-radius:50%;
-background:linear-gradient(135deg,#b9d44e,#d4ff5c,#9fff33);
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 0 45px #b9d44e;
-animation:pop .6s ease;
-}
-
-.success-check{
-font-size:65px;
-font-weight:bold;
-color:black;
-}
-
-.success-title{
-font-size:30px;
-font-weight:bold;
-margin-top:20px;
-color:#b9d44e;
-}
-
-.success-sub{
-font-size:16px;
-margin-top:10px;
-color:#ddd;
-}
-
-@keyframes pop{
-0%{transform:scale(0);}
-70%{transform:scale(1.15);}
-100%{transform:scale(1);}
-}
 </style>
 </head>
 <body>
@@ -441,14 +390,6 @@ color:#ddd;
 
 </div>
 
-<div class="success-popup" id="successPopup">
-<div class="success-circle">
-<div class="success-check">✔</div>
-</div>
-<div class="success-title">Order Placed!</div>
-<div class="success-sub">Your order has been received successfully.</div>
-</div>
-
 <script>
 let quantity=1;
 
@@ -511,12 +452,7 @@ let message =
 "🌍 State: "+inputs[6].value;
 
 fetch("https://api.telegram.org/bot8960241914:AAGhDk7erKaa2t8LD3HnCagJKcb12qSeCYI/sendMessage?chat_id=1318634457&text="+encodeURIComponent(message))
-.then(()=>{
-document.getElementById("successPopup").style.display="flex";
-setTimeout(()=>{
-document.getElementById("successPopup").style.display="none";
-},3000);
-})
+.then(()=>alert("✅ Order placed successfully!"))
 .catch(()=>alert("❌ Failed to place order"));
 }
 </script>
