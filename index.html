@@ -385,7 +385,7 @@ outline:none;
 <input type="text" placeholder="City" class="input-box">
 <input type="text" placeholder="State" class="input-box">
 
-<button class="cart-btn" onclick="payNow()">PAY ₹599</button>
+<button class="cart-btn" onclick="placeOrder()">PLACE ORDER</button>
 </div>
 
 </div>
@@ -428,7 +428,7 @@ document.getElementById("checkoutPage").style.display="block";
 document.getElementById("checkoutPage").scrollIntoView({behavior:"smooth"});
 }
 
-function payNow(){
+function placeOrder(){
 let inputs=document.querySelectorAll(".input-box");
 let selectedSize=document.querySelector("#checkoutPage .size.active").innerText;
 
@@ -439,13 +439,10 @@ return;
 }
 }
 
-let total = 599 * quantity;
-
 let message =
-"🛒 New Paid Order\n\n"+
+"🛒 New Order\n\n"+
 "👕 Size: "+selectedSize+"\n"+
 "📦 Quantity: "+quantity+"\n"+
-"💰 Amount: ₹"+total+"\n"+
 "👤 Name: "+inputs[0].value+"\n"+
 "📞 Phone: "+inputs[1].value+"\n"+
 "📍 Pincode: "+inputs[2].value+"\n"+
@@ -454,13 +451,11 @@ let message =
 "🏙 City: "+inputs[5].value+"\n"+
 "🌍 State: "+inputs[6].value;
 
-fetch("https://api.telegram.org/bot8960241914:AAGhDk7erKaa2t8LD3HnCagJKcb12qSeCYI/sendMessage?chat_id=1318634457&text="+encodeURIComponent(message));
-
-let upiUrl = "upi://pay?pa=vishnuvishnu75911@oksbi&pn=Tervo Store&am="+total+"&cu=INR";
-
-window.location.href = upiUrl;
+fetch("https://api.telegram.org/bot8960241914:AAGhDk7erKaa2t8LD3HnCagJKcb12qSeCYI/sendMessage?chat_id=1318634457&text="+encodeURIComponent(message))
+.then(()=>alert("✅ Order placed successfully!"))
+.catch(()=>alert("❌ Failed to place order"));
 }
 </script>
 
 </body>
-</html>
+  </html>
